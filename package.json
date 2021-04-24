@@ -1,0 +1,15 @@
+{
+  "name": "prodigy.personal.projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "download_ingredients.js",
+  "scripts": {
+    "manual": "python -m prodigy ner.manual ner_ingredients blank:es ./ingredients.jsonl --label 'INGREDIENT,QUANTITY,MEASURE,COMMENT'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
