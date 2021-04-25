@@ -4,7 +4,9 @@
   "description": "",
   "main": "download_ingredients.js",
   "scripts": {
-    "manual": "python -m prodigy ner.manual ner_ingredients blank:es ./ingredients.jsonl --label 'INGREDIENT,QUANTITY,MEASURE,COMMENT'"
+    "edit-patterns": "python -m prodigy ner.manual ner_ingredients blank:es ./ingredients.jsonl --label 'INGREDIENT,QUANTITY,MEASURE,COMMENT'",
+    "save-patterns": "python -m prodigy terms.to-patterns ner_ingredients --label 'INGREDIENT,QUANTITY,MEASURE,COMMENT' --spacy-model blank:es > ./patterns/ingredient_patterns.jsonl",
+    "annotate-patterns": "python -m prodigy ner.manual ingredients_data blank:es ./ingredients.jsonl --label 'INGREDIENT,QUANTITY,MEASURE,COMMENT' --patterns ./patterns/ingredient_patterns.jsonl"
   },
   "keywords": [],
   "author": "",
